@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 
 #variables 
-nb_generation = 10
+nb_generation = 100
 nb_ville = 10
 nb_ind_random = 10000
 nb_reset = 10
@@ -31,20 +31,17 @@ a = 0
 
 Liste = [i for i in range(nb_ville)]
 
-rnd = np.random
-rnd.seed(0)
 Q = 15
 N = [i for i in range(1,nb_ville+1)]
 V = [0] + N
-q = {i:rnd.randint(1,10) for i in N}
 dist = []
 
 
 # In[3]:
 
 
-loc_x = rnd.rand(len(V))*200
-loc_y = rnd.rand(len(V))*100
+loc_x = np.random.randint(2000, size = (len(V)))
+loc_y = np.random.randint(2000, size = (len(V)))
 for i in V:
     v_1 = np.array((loc_x[i],loc_y[i]))
     dist.append([])
